@@ -9,10 +9,10 @@
 <canvas id="icon" width="300" height="300"></canvas>
 
 <script>
-  var js_icon = new Skycons({"color": "gray"});
+  var icon_animation = new Skycons({"color": "gray"});
 
-  js_icon.add("icon", <%= @weather_icon.to_json.html_safe %>);
-  js_icon.play();
+  icon_animation.add("icon", <%= @weather_icon.to_json.html_safe %>);
+  icon_animation.play();
 
 </script>
 </body>
