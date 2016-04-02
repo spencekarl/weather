@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
+
+# For flickr api data
+gem 'flickraw'
+# For testing
 gem 'pry'
+# For geolocation data
 gem 'geocoder'
+# For forecast.io api data
 gem 'forecast_io'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'
