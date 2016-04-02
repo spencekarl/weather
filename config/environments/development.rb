@@ -1,7 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # NEED TO MOVE TO LOCAL ENV!!!!
   ForecastIO.api_key = '22b9eb9e121554ff8ad293327ccb41e9'
+  FlickRaw.api_key = "b15189f3b0679e4e0113965b45646c17"
+  FlickRaw.shared_secret = "f1d0f2724c685d50"
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
