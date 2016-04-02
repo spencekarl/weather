@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><%= @weather_icon %></p>
+<p><%= @latitude %></p>
+<p><%= @longitude %></p>
+
+<canvas id="icon" width="300" height="300"></canvas>
+
+<script>
+  var js_icon = new Skycons({"color": "gray"});
+
+  js_icon.add("icon", <%= @weather_icon.to_json.html_safe %>);
+  js_icon.play();
+
+</script>
+</body>
+</html>
