@@ -4,6 +4,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: "Montserrat";
+  color: white;
 }
 
 #weather-info {
@@ -20,15 +22,17 @@ canvas {
   display: inline-block;
 }
 
-#temp {
+#temperature {
   position: absolute;
   display: inline-block;
   top: 50%;
   transform: translateY(-50%);
   left: 300px;
   font-size: 10em;
-  color: white;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat"
+}
+
+h1 {
+  font-size: 3em;
 }

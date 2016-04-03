@@ -1,13 +1,12 @@
 class WeatherController < ApplicationController
   def index
-    @latitude = request.location.latitude
-    @longitude = request.location.longitude
+    latitude, longitude = request.location.latitude, request.location.longitude
 
-    location = Geocoder.search("#{@latitude},#{@longitude}").first
+    location = Geocoder.search("#{latitude},#{longitude}").first
     @city = location.city
     @state = location.state
 
-    forecast = ForecastIO.forecast(@latitude, @longitude)
+    forecast = ForecastIO.forecast(latitude, longitude)
     @weather_icon = forecast.currently.icon
     @temperature = forecast.currently.temperature.to_i
 
@@ -28,23 +27,17 @@ class WeatherController < ApplicationController
       tags.prepend("sunny,")
     end
 
-    photos = flickr.photos.search(:text => "#{@city} #{@state}", :sort => "relevance",
+    photo_results = flickr.photos.search(:text => "#{@city} #{@state}", :sort => "relevance",
                                   :safe_search => 1, :content_type => 1, :per_page => 10, :page => 1, :tags => tags, :extras => "url_k, url_h")
-    if photos[0] == nil
-      photos = flickr.photos.search(:text => "#{@city} #{@state}", :sort => "relevance",
+    if photo_results[0] == nil
+      photo_results = flickr.photos.search(:text => "#{@city} #{@state}", :sort => "relevance",
                                     :safe_search => 1, :content_type => 1, :per_page => 10, :page => 1, :extras => "url_k, url_h")
     end
 
-    original=[]
-    photos.each { |photo|
-      if photo.respond_to?(:url_k)
-        original.push(photo.url_k)
-      elsif photo.respond_to?(:url_b)
-        original.push(photo.url_b)
-      end
-    }
+    url_list = []
+    photo_results.each { |photo| url_list.push(photo.url_k) if photo.respond_to?(:url_k) }
 
-    @url = original[rand(original.length)]
+    @location_photo = url_list[rand(url_list.length)]
 
     # next up: full screen image, and stlye weather
     # learn about scss
