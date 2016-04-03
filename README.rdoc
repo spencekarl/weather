@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A one-page Ruby on Rails web app to display current location weather overlayed onto a photo of the current location
 
-Things you may want to cover:
+-Gets current geolocation from Geocoder Ruby Gem
 
-* Ruby version
+-Uses location to retrieve weather data from the Forecast.io API
 
-* System dependencies
+-Uses location to retrieve a location photo from the Flickr API
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-Displays weather on top of a fullscreen photo.
