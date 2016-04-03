@@ -3,7 +3,9 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+  ForecastIO.api_key = '22b9eb9e121554ff8ad293327ccb41e9'
+  FlickRaw.api_key = "b15189f3b0679e4e0113965b45646c17"
+  FlickRaw.shared_secret = "f1d0f2724c685d50"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

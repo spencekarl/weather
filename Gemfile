@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'puma'
 # For flickr api data
 gem 'flickraw'
 # For testing
