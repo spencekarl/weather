@@ -6,7 +6,7 @@
     <canvas id="weather-icon" width=300; height=300;></canvas>
     <div id="temperature"><%= "#{@temperature.to_s}°" %></div>
     <!--<h1><%= @city.capitalize + " " + ::States.key(@state).to_s %></h1> -->
-    <h1><%= "#{@latitude}, #{@longitude}" %></h1>
+    <h1><%= "#{@latitude.to_s}, #{@longitude.to_s}" %></h1>
   </div>
 
   <script>
