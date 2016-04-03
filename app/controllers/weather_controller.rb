@@ -1,10 +1,10 @@
 class WeatherController < ApplicationController
   def index
     # Stores all location and necessary weather data
-    latitude, longitude = request.location.latitude, request.location.longitude
-    location = Geocoder.search("#{latitude},#{-longitude}").first
+    @latitude, @longitude = request.location.latitude, request.location.longitude
+    @location = Geocoder.search("#{@latitude},#{@longitude}").first
     @city, @state = location.city, location.state
-    forecast = ForecastIO.forecast(latitude, longitude)
+    forecast = ForecastIO.forecast(@latitude, @longitude)
     @weather_icon, @temperature = forecast.currently.icon, forecast.currently.temperature.to_i
 
     # Search for photos at location
