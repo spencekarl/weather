@@ -4,7 +4,7 @@
 <body>
   <div id="weather-info">
     <canvas id="weather-icon" width=300; height=300;></canvas>
-    <div id="temperature"><%= @temperature.to_s + "°" %></div>
+    <div id="temperature"><%= "#{@temperature.to_s}°" %></div>
     <!-- add location : <h1><%= @city.capitalize + " " + ::States.key(@state).to_s %></h1> -->
   </div>
 
