@@ -5,7 +5,7 @@ class WeatherController < ApplicationController
 
     @location = Geocoder.search("#{@latitude},#{@longitude}").first
     @city, @state = @location.city, @location.state
-    
+
     forecast = ForecastIO.forecast(@latitude, @longitude)
     @weather_icon, @temperature = forecast.currently.icon, forecast.currently.temperature.to_i
 
