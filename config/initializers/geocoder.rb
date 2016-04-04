@@ -1,4 +1,4 @@
-Geocoder.configure(:ip_lookup => :ipapi_com)
+Geocoder.configure(:ip_lookup => :ipinfo_io)
 
 if %w(development test).include? Rails.env
 
