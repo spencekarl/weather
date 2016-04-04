@@ -2,11 +2,11 @@
 <html style="background: url(<%= @location_photo %>) no-repeat center center fixed;
              background-size: cover">
 <body>
+<h1><%= "#{@latitude.to_s}, #{@longitude.to_s}, #{@city}, #{@state}, #{request.ip}" %></h1>
   <div id="weather-info">
     <canvas id="weather-icon" width=300; height=300;></canvas>
     <div id="temperature"><%= "#{@temperature.to_s}°" %></div>
     <!--<h1><%= @city.capitalize + " " + ::States.key(@state).to_s %></h1> -->
-    <h1><%= "#{@latitude.to_s}, #{@longitude.to_s}, #{@city}, #{@state}, #{request.ip}" %></h1>
   </div>
 
   <script>

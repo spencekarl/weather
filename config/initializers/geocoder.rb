@@ -1,4 +1,4 @@
-Geocoder.configure(:ip_lookup => :google)
+Geocoder.configure(:ip_lookup => :freegeoip)
 
 if %w(development test).include? Rails.env
 
