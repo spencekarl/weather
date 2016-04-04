@@ -1,4 +1,4 @@
-Geocoder.configure(:ip_lookup => :google)
+Geocoder.configure(:ip_lookup => :freegeoip)
 
 if %w(development test).include? Rails.env
 
@@ -17,5 +17,5 @@ if %w(development test).include? Rails.env
       alias_method_chain :geocoder_spoofable_ip, :localhost_override
     end
   end
-  
+
 end
