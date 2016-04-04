@@ -3,7 +3,8 @@ class WeatherController < ApplicationController
     # Stores all location and necessary weather data
     @latitude, @longitude = request.location.latitude, request.location.longitude
     @location = Geocoder.search("#{@latitude},#{@longitude}").first
-    @city, @state = location.city, location.state
+    binding.pry
+    @city, @state = @location.city, @location.state
     forecast = ForecastIO.forecast(@latitude, @longitude)
     @weather_icon, @temperature = forecast.currently.icon, forecast.currently.temperature.to_i
 
