@@ -1,11 +1,8 @@
-== README
+# Weather
+A one-page app that display's weather at user's location overlayed onto a full screen photo of the user's city.
 
-A one-page Ruby on Rails web app to display current location weather overlayed onto a photo of the current location
-
--Gets current geolocation from Geocoder Ruby Gem
-
--Uses location to retrieve weather data from the Forecast.io API
-
--Uses location to retrieve a location photo from the Flickr API
-
--Displays weather on top of a fullscreen photo.
+## Implementation
+-Gets user location data from an ip lookup service
+-Uses location data with Forecast.io API to get weather data
+-Uses location data with Flickr API to get photo from location
+-Displays weather data overlayed onto location photo
